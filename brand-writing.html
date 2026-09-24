@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Brand Writing - Miche O'higgins</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=2">
+</head>
+<body class="service-brand">
+<header class="nav" id="siteNav"><div class="nav-inner"><a class="nav-name" href="index.html#top">Miche O'higgins</a><nav class="links" id="navLinks"><a href="index.html#top">Home</a><div class="dropdown" id="servicesDropdown"><button class="dd-trigger" id="ddTrigger" aria-expanded="false" aria-haspopup="true">Services</button><div class="dd-menu" id="ddMenu"><a href="brand-writing.html">Brand Writing</a><a href="creative-writing.html">Creative Writing</a><a href="organisational-identity.html">Organisational Identity</a><a href="workshops.html">Workshops &amp; Mentorship</a><a href="workshops.html">Workshops</a></div></div><a href="about.html">About</a><a href="index.html#pricing">Pricing</a><a href="index.html#contact">Contact</a></nav><button class="menu-btn" id="menuBtn" aria-label="Toggle menu">Menu</button></div></header>
+<main><section class="wrap fade service-page"><h1>Brand Writing</h1><p class="service-page-sub"><em>For freelancers, independent small businesses and organisations</em></p><div class="service-page-grid"><div><ul><li>Finding the words to describe who you are and what you do</li><li>Making your services easier to understand for your clients or audience</li><li>Website copy (taglines, UX, SEO)</li><li>Developing an authentic and coherent tone</li><li>Digital content writing (newsletters, blogs, social media, video scripts, interview transcripts)</li></ul></div><div class="service-examples"><h2>Past work</h2><details class="accordion"><summary>Mette Theilmann<span class="icon">+</span></summary><div class="a-body testimonial"><p>&quot;Working with Miche as a copywriter was not only helpful but also highly inspiring and insightful. She brought a thoughtful and creative approach to the process, by asking questions that gently challenged and expanded my ideas and concepts. This helped us bring greater depth, meaning and authenticity to a business concept that was complex and deeply personal.&quot;</p><p>&quot;I would highly recommend Miche to anyone looking for thoughtful, creative and meaningful copywriting, that is standout and not the generic AI content that is everywhere today.&quot;</p><p><em>Mette Theilmann, mettetheilmann.com</em></p></div></details></div></div><a class="btn" href="index.html#contact">Get in touch</a></section></main>
+<script>
+const nav=document.getElementById('siteNav');window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>8),{passive:true});
+const menuBtn=document.getElementById('menuBtn'),navLinks=document.getElementById('navLinks');menuBtn.addEventListener('click',()=>navLinks.classList.toggle('open'));navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{navLinks.classList.remove('open');document.getElementById('servicesDropdown').classList.remove('open')}));
+const dropdown=document.getElementById('servicesDropdown'),ddTrigger=document.getElementById('ddTrigger');ddTrigger.addEventListener('click',e=>{e.stopPropagation();const isOpen=dropdown.classList.toggle('open');ddTrigger.setAttribute('aria-expanded',isOpen)});document.addEventListener('click',e=>{if(!dropdown.contains(e.target)){dropdown.classList.remove('open');ddTrigger.setAttribute('aria-expanded','false')}});
+try{const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});document.querySelectorAll('.fade').forEach(el=>io.observe(el))}catch(e){document.querySelectorAll('.fade').forEach(el=>el.classList.add('in'))}
+</script>
+</body>
+</html>

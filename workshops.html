@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Workshops - Miche O'higgins</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=2">
+</head>
+<body>
+
+<header class="nav" id="siteNav">
+  <div class="nav-inner">
+    <a class="nav-name" href="index.html#top">Miche O'higgins</a>
+    <nav class="links" id="navLinks">
+      <a href="index.html#top">Home</a>
+      <div class="dropdown" id="servicesDropdown">
+        <button class="dd-trigger" id="ddTrigger" aria-expanded="false" aria-haspopup="true">Services</button>
+        <div class="dd-menu" id="ddMenu">
+          <a href="brand-writing.html">Brand Writing</a>
+          <a href="creative-writing.html">Creative Writing</a>
+          <a href="organisational-identity.html">Organisational Identity</a>
+          <a href="workshops.html">Workshops &amp; Mentorship</a>
+        </div>
+      </div>
+      <a href="about.html">About</a>
+      <a href="index.html#pricing">Pricing</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">Menu</button>
+  </div>
+</header>
+
+<main id="workshops">
+  <section class="wrap service-page workshop-page">
+    <div class="wrap">
+      <h1>Workshops</h1>
+      <p class="service-page-sub"><em>Organisations, Schools, Festivals and Individuals</em></p>
+      <p class="service-note">I love getting to share my passion for writing processes through workshops that show how playful and diverse writing can be. They vary from the more experimental to very practical (often both combined) but in all of them, I aim to leave people feeling empowered to keep writing in a way and a voice that fits them. Explore my current and past workshops.</p>
+      <p class="service-note">I also offer 1-1 writing mentorship for personal or professional writing projects. I offer support getting a writing project started and planned out as well as offering accountability, regular check-ins, writing advice and proofreading.</p>
+    </div>
+  </section>
+  <section class="wrap workshop-archive">
+    <details class="accordion" open>
+      <summary><strong>Re:publica</strong><span class="icon">+</span></summary>
+      <div class="workshop-body">
+        <div class="workshop-media"><img src="images/economy.png" alt="Re:publica workshop image"><p class="workshop-caption"><em>A creative storytelling game devised around the themes of queerness, economy and exchange.</em></p></div>
+      </div>
+    </details>
+    <details class="accordion" open>
+      <summary><strong>Opstand Library, Den Haag</strong><span class="icon">+</span></summary>
+      <div class="workshop-body">
+        <div class="workshop-media"><img src="images/radical.png" alt="Opstand Library workshop image"><p class="workshop-caption"><em>Exploring the theme of radicality through creative writing.</em></p></div>
+      </div>
+    </details>
+    <details class="accordion" open>
+      <summary><strong>Royal Academy of Art Den Haag</strong><span class="icon">+</span></summary>
+      <div class="workshop-body">
+        <div class="workshop-images">
+          <div class="workshop-media"><img src="images/kabk.png" alt="Royal Academy of Art Den Haag workshop image"><p class="workshop-caption"><em>Exploring collective writing exercises that use unpredictability and randomness to produce novelty.</em></p></div>
+          <div class="workshop-media"><img src="images/kabk2.png" alt="Royal Academy of Art Den Haag workshop image"><p class="workshop-caption"><em>Interactive workshop based on the book “Hospicing Modernity”.</em></p></div>
+        </div>
+      </div>
+    </details>
+    <details class="accordion" open>
+      <summary><strong>Queer Futures Writing Lab</strong><span class="icon">+</span></summary>
+      <div class="workshop-body">
+        <div class="workshop-images">
+          <div class="workshop-media"><img src="images/qf.png" alt="Queer Futures Writing Lab workshop image"><p class="workshop-caption"><em>Monthly experimental writing session on the themes of digitality, body, gender and water.</em></p></div>
+          <div class="workshop-media"><img src="images/qf2.png" alt="Queer Futures Writing Lab workshop image"></div>
+        </div>
+      </div>
+    </details>
+  </section>
+</main>
+
+<script>
+  const nav = document.getElementById('siteNav');
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 8);
+  }, {passive:true});
+
+  const menuBtn = document.getElementById('menuBtn');
+  const navLinks = document.getElementById('navLinks');
+  menuBtn.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    document.getElementById('servicesDropdown').classList.remove('open');
+  }));
+
+  const dropdown = document.getElementById('servicesDropdown');
+  const ddTrigger = document.getElementById('ddTrigger');
+  ddTrigger.addEventListener('click', (e) => {
+    e.stopPropagation();
+    dropdown.classList.toggle('open');
+    ddTrigger.setAttribute('aria-expanded', dropdown.classList.contains('open'));
+  });
+  document.addEventListener('click', () => dropdown.classList.remove('open'));
+</script>
+</body>
+</html>
