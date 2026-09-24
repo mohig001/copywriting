@@ -35,14 +35,26 @@
 
 <main id="workshops">
   <section class="wrap service-page workshop-page">
-    <div class="wrap">
-      <h1>Workshops</h1>
-      <p class="service-page-sub"><em>Organisations, Schools, Festivals and Individuals</em></p>
+    <h1>Workshops and Mentorship</h1>
+    <p class="service-page-sub"><em>Organisations, Schools, Festivals and Individuals</em></p>
       <p class="service-note">I love getting to share my passion for writing processes through workshops that show how playful and diverse writing can be. They vary from the more experimental to very practical (often both combined) but in all of them, I aim to leave people feeling empowered to keep writing in a way and a voice that fits them. Explore my current and past workshops.</p>
       <p class="service-note">I also offer 1-1 writing mentorship for personal or professional writing projects. I offer support getting a writing project started and planned out as well as offering accountability, regular check-ins, writing advice and proofreading.</p>
-    </div>
   </section>
   <section class="wrap workshop-archive">
+    <details class="accordion" open>
+      <summary><strong>Urban Myth Making Festival</strong><span class="icon">+</span></summary>
+      <div class="workshop-body">
+        <p class="workshop-static-description"><em>Scavenging the urban landscape for stories, blurring the line between fantasy and reality.</em></p>
+        <div class="workshop-carousel critter-carousel" aria-label="Urban Myth Making Festival gallery">
+          <div class="workshop-slide is-active"><div class="workshop-media"><img src="images/critters.png" alt="Urban Myth Making Festival workshop image"></div></div>
+          <div class="workshop-slide"><div class="workshop-media"><img src="images/critters2.png" alt="Urban Myth Making Festival workshop image"></div></div>
+          <div class="workshop-slide"><div class="workshop-media"><img src="images/critters3.png" alt="Urban Myth Making Festival workshop image"></div></div>
+          <div class="workshop-slide"><div class="workshop-media"><img src="images/critters4.png" alt="Urban Myth Making Festival workshop image"></div></div>
+          <button class="carousel-prev workshop-prev" type="button" aria-label="Show previous workshop image">←</button>
+          <button class="carousel-next workshop-next" type="button" aria-label="Show next workshop image">→</button>
+        </div>
+      </div>
+    </details>
     <details class="accordion" open>
       <summary><strong>Re:publica</strong><span class="icon">+</span></summary>
       <div class="workshop-body">
@@ -58,7 +70,7 @@
     <details class="accordion" open>
       <summary><strong>Royal Academy of Art Den Haag</strong><span class="icon">+</span></summary>
       <div class="workshop-body">
-        <div class="workshop-images">
+        <div class="workshop-images workshop-kabk">
           <div class="workshop-media"><img src="images/kabk.png" alt="Royal Academy of Art Den Haag workshop image"><p class="workshop-caption"><em>Exploring collective writing exercises that use unpredictability and randomness to produce novelty.</em></p></div>
           <div class="workshop-media"><img src="images/kabk2.png" alt="Royal Academy of Art Den Haag workshop image"><p class="workshop-caption"><em>Interactive workshop based on the book “Hospicing Modernity”.</em></p></div>
         </div>
@@ -67,13 +79,18 @@
     <details class="accordion" open>
       <summary><strong>Queer Futures Writing Lab</strong><span class="icon">+</span></summary>
       <div class="workshop-body">
-        <div class="workshop-images">
-          <div class="workshop-media"><img src="images/qf.png" alt="Queer Futures Writing Lab workshop image"><p class="workshop-caption"><em>Monthly experimental writing session on the themes of digitality, body, gender and water.</em></p></div>
-          <div class="workshop-media"><img src="images/qf2.png" alt="Queer Futures Writing Lab workshop image"></div>
+        <p class="workshop-static-description"><em>Monthly experimental writing session on the themes of digitality, body, gender and water.</em></p>
+        <div class="workshop-carousel" aria-label="Queer Futures Writing Lab gallery">
+          <div class="workshop-slide is-active"><div class="workshop-media"><img src="images/qf.png" alt="Queer Futures Writing Lab workshop image"></div></div>
+          <div class="workshop-slide"><div class="workshop-media"><img src="images/qf2.png" alt="Queer Futures Writing Lab workshop image"></div></div>
+          <div class="workshop-slide"><div class="workshop-media"><img src="images/queer2.png" alt="Queer Futures Writing Lab workshop image"></div></div>
+          <button class="carousel-prev workshop-prev" type="button" aria-label="Show previous workshop image">←</button>
+          <button class="carousel-next workshop-next" type="button" aria-label="Show next workshop image">→</button>
         </div>
       </div>
     </details>
   </section>
+  <p class="workshop-callout"><strong>Need a workshop for your community event, festival or school?</strong><br>I can tailor workshops to a specific theme or needs of your group.<br><a href="index.html#contact">Get in touch to hear what's possible!</a></p>
 </main>
 
 <script>
@@ -98,6 +115,9 @@
     ddTrigger.setAttribute('aria-expanded', dropdown.classList.contains('open'));
   });
   document.addEventListener('click', () => dropdown.classList.remove('open'));
+</script>
+<script>
+document.querySelectorAll('.workshop-carousel').forEach(carousel=>{const slides=[...carousel.querySelectorAll('.workshop-slide')];let current=0;const move=direction=>{const oldSlide=slides[current];current=(current+direction+slides.length)%slides.length;const newSlide=slides[current];oldSlide.classList.remove('is-active');oldSlide.classList.add('is-exiting');newSlide.classList.add('is-active');setTimeout(()=>oldSlide.classList.remove('is-exiting'),450);};carousel.querySelector('.workshop-prev').addEventListener('click',()=>move(-1));carousel.querySelector('.workshop-next').addEventListener('click',()=>move(1));});
 </script>
 </body>
 </html>
