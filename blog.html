@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Blog - Miche O'higgins</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=2">
+</head>
+<body class="blog-page">
+<header class="nav" id="siteNav">
+  <div class="nav-inner">
+    <a class="nav-name" href="index.html#top">Miche O'higgins</a>
+    <nav class="links" id="navLinks">
+      <a href="index.html#top">Home</a>
+      <div class="dropdown" id="servicesDropdown">
+        <button class="dd-trigger" id="ddTrigger" aria-expanded="false" aria-haspopup="true">Services</button>
+        <div class="dd-menu" id="ddMenu">
+          <a href="brand-writing.html">Brand Writing</a>
+          <a href="creative-writing.html">Creative Writing</a>
+          <a href="organisational-identity.html">Organisational Identity</a>
+          <a href="workshops.html">Workshops &amp; Mentorship</a>
+        </div>
+      </div>
+      <a href="about.html">About</a>
+      <a href="blog.html">Blog</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">Menu</button>
+  </div>
+</header>
+
+<main>
+  <section class="wrap fade" style="padding-top:120px;padding-bottom:88px;">
+    <h1>Blog</h1>
+    <div class="blog-grid">
+      <div class="blog-card">
+        <a href="case-study-mette-theilmann.html">
+          <img src="images/mette.png" alt="Mette Theilmann case study">
+          <div class="blog-card-body">
+            <h3>Case Study: Mette Theilmann</h3>
+            <p>Building brand copy from scratch for a new website.</p>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <p class="footer-text">I would love to help you weave some beautiful words for your business or project.<br><br><a href="index.html#contact">Get in touch here.</a></p>
+    <div class="footer-contact">
+      <span>+49 162 252 9030</span>
+      <a href="mailto:michelle_oht@hotmail.com">michelle_oht@hotmail.com</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+const nav=document.getElementById('siteNav');window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>8),{passive:true});
+const menuBtn=document.getElementById('menuBtn'),navLinks=document.getElementById('navLinks');menuBtn.addEventListener('click',()=>navLinks.classList.toggle('open'));navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{navLinks.classList.remove('open');document.getElementById('servicesDropdown').classList.remove('open')}));
+const dropdown=document.getElementById('servicesDropdown'),ddTrigger=document.getElementById('ddTrigger');ddTrigger.addEventListener('click',e=>{e.stopPropagation();const isOpen=dropdown.classList.toggle('open');ddTrigger.setAttribute('aria-expanded',isOpen)});document.addEventListener('click',e=>{if(!dropdown.contains(e.target)){dropdown.classList.remove('open');ddTrigger.setAttribute('aria-expanded','false')}});
+try{const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});document.querySelectorAll('.fade').forEach(el=>io.observe(el))}catch(e){document.querySelectorAll('.fade').forEach(el=>el.classList.add('in'))}
+</script>
+</body>
+</html>

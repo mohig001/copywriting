@@ -26,7 +26,7 @@
         </div>
       </div>
       <a href="about.html">About</a>
-      <a href="#pricing">Pricing</a>
+      <a href="blog.html">Blog</a>
       <a href="#contact">Contact</a>
     </nav>
     <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">Menu</button>
@@ -47,7 +47,7 @@
 
   <section class="services-intro" id="what">
     <div class="wrap fade">
-      <h2>What I can do for you</h2>
+      <h2>What I write</h2>
       <ul class="plain">
         <li>Website copy</li>
         <li>Email marketing</li>
@@ -210,16 +210,31 @@
       <textarea id="project" name="Tell me about your project" rows="4"></textarea>
       <button class="form-submit" type="submit">Send enquiry</button>
     </form>
-    <div class="contact-details">
-      <a href="mailto:michelle_oht@hotmail.com">michelle_oht@hotmail.com</a>
-      <span>Whatsapp: +491622529030</span>
-    </div>
     </div>
   </section>
 
 </main>
 
+<footer>
+  <div class="footer-inner">
+    <p class="footer-text">I would love to help you weave some beautiful words for your business or project.<br><br><a href="#contact">Get in touch here.</a></p>
+    <div class="footer-contact">
+      <span>+49 162 252 9030</span>
+      <a href="mailto:michelle_oht@hotmail.com">michelle_oht@hotmail.com</a>
+    </div>
+  </div>
+</footer>
+
 <script>
+  // smooth scroll for same-page anchors only
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', (e) => {
+      e.preventDefault();
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
   // scroll shadow on nav
   const nav = document.getElementById('siteNav');
   window.addEventListener('scroll', () => {
