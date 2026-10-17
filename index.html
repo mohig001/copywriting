@@ -155,15 +155,14 @@
     <div class="wrap">
     <h2>I'm ready to get started.</h2>
     <p class="lede">Reach me through the form below and let's see how we can work together. I’d love to hear from you.</p>
-    <form class="contact-form" action="mailto:michelle_oht@hotmail.com" method="post" enctype="text/plain">
-      <label for="name">Name</label>
-      <input id="name" name="Name" type="text" autocomplete="name" required>
-      <label for="email">Email</label>
-      <input id="email" name="Email" type="email" autocomplete="email" required>
-      <label for="help">Why are you reaching out?</label>
-      <textarea id="help" name="Why are you reaching out" rows="3"></textarea>
-      <label for="project">Tell me about your project (if applicable)</label>
-      <textarea id="project" name="Tell me about your project" rows="4"></textarea>
+    <form class="contact-form" action="https://api.web3forms.com/submit" method="POST">
+      <input type="hidden" name="access_key" value="76eb0347-9ee0-4606-85aa-691247d043fa">
+      <label for="email">Your email</label>
+      <input id="email" name="email" type="email" autocomplete="email" required>
+      <label for="subject">Email subject</label>
+      <input id="subject" name="subject" type="text">
+      <label for="help">How can I help?</label>
+      <textarea id="help" name="message" rows="5"></textarea>
       <button class="form-submit" type="submit">Send enquiry</button>
     </form>
     </div>
