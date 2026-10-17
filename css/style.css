@@ -308,7 +308,7 @@ ul.plain li{padding:18px 0;border-bottom:1px solid var(--line);font-size:1.1rem;
 /* FAQ */
 .faq{background:var(--beige);}
 .faq .accordion summary{font-family:'Lora',serif;font-size:1.15rem;padding:20px 0;}
-.faq .accordion .a-body{font-style:normal;font-size:1.05rem;line-height:1.75;padding-bottom:28px;}
+.faq .accordion .a-body{font-style:normal;font-size:1.05rem;line-height:1.75;padding-bottom:28px;max-width:62ch;}
 
 /* Contact */
 .contact{padding:130px 0 75px;}
