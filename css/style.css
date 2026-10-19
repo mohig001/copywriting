@@ -169,7 +169,7 @@ ul.plain li{padding:18px 0;border-bottom:1px solid var(--line);font-size:1.1rem;
 @media(max-width:760px){.service-page{padding-top:110px;padding-bottom:64px;}.service-page-sub{margin-bottom:40px;}.service-page-grid{grid-template-columns:1fr;gap:44px;}.service-brand .service-examples details[open] .a-body,.service-creative .service-examples details[open] .a-body,.service-identity .service-examples details[open] .a-body{background-position:center bottom;background-size:180px auto;padding-right:0;padding-bottom:200px;}.service-page > .btn{margin-top:40px;}}
 .service{padding:44px 0;border-top:1px solid var(--line);display:grid;grid-template-columns:120px 1fr 1fr;gap:24px;}
 @media(max-width:760px){.service{grid-template-columns:1fr;gap:10px;}}
-.service:last-of-type{border-bottom:1px solid var(--line);}
+.service:last-of-type{border-bottom:none;}
 .service .snum{font-family:'Lora',serif;font-style:italic;color:var(--grey);font-size:1.1rem;}
 .service h3{font-size:1.4rem;font-weight:500;margin:0 0 6px;}
 .service h3 a{text-decoration:none;}
