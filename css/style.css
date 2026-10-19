@@ -23,6 +23,9 @@ h1,h2,h3,.serif{font-family:'Lora',serif;color:var(--green-dark);}
 p{line-height:1.7;color:var(--charcoal-soft);max-width:62ch;}
 a{color:inherit;}
 .wrap{max-width:1080px;margin:0 auto;padding:0 28px;}
+@media(max-width:760px){.wrap{padding:0 40px;}}
+@media(max-width:760px){#how,#services,#what .wrap{padding-left:88px;padding-right:88px;}}
+@media(max-width:760px){.work-cols{padding:0;}}
 section{padding:110px 0;}
 @media(max-width:720px){section{padding:72px 0;}}
 .homepage section:not(.hero){padding:88px 0 64px;}
@@ -317,6 +320,27 @@ ul.plain li{padding:18px 0;border-bottom:1px solid var(--line);font-size:1.1rem;
 .service-creative .page-banner{background-image:url('../images/sea.JPG');background-position:center 55%;}
 .workshop-page .page-banner{background-image:url('../images/workshops/7.JPG');background-position:center 30%;}
 @media(max-width:720px){.page-banner{height:220px;margin-top:-110px;}}
+
+/* mobile hero */
+@media(max-width:760px){
+  .hero-inner{grid-template-columns:1fr;gap:24px;padding-bottom:48px;}
+  .hero-copy{transform:none;max-width:100%;}
+  .hero-profile{justify-self:center;margin-right:0;max-width:280px;}
+  .hero{min-height:auto;padding-top:100px;}
+}
+
+/* mobile accordion */
+@media(max-width:760px){
+  .service-creative .accordion summary,.service-brand .accordion summary{font-size:1rem;padding:14px 16px;}
+  .service-creative .img-wrapper,.service-brand .img-wrapper{max-width:100%;}
+  .img-row{flex-direction:column;gap:16px;}
+}
+
+/* mobile footer */
+@media(max-width:760px){
+  .footer-inner{flex-direction:column;align-items:flex-start;gap:16px;}
+  footer{padding:32px 28px;}
+}
 .contact h2{font-size:clamp(1.9rem,4vw,2.8rem);font-weight:500;margin:0 0 24px;}
 .contact p.lede{font-size:1.05rem;margin-bottom:40px;}
 .contact .email{font-family:'Lora',serif;font-size:1.4rem;text-decoration:none;border-bottom:1px solid var(--charcoal);}
