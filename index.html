@@ -6,7 +6,7 @@
 <title>Miche O'higgins — Copywriter and Concept Developer</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@200;300;400&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="css/style.css?v=2">
 </head>
 <body class="homepage">
@@ -37,10 +37,17 @@
   <section class="hero">
     <div class="hero-inner wrap">
       <div class="hero-copy">
-        <h1>Copywriter and Concept Developer</h1>
-        <p class="lede"><em>What are you actually trying to say and why?</em> I work forwards from these two questions to write copy that doesn’t just <em>sound</em> good but brings out the most genuine and unique parts of your work.</p>
+        <div class="q-batch" id="qBatch">
+          <p class="q-line">What's something you wish you could say?</p>
+          <p class="q-line">What’s something you haven’t found the right words for yet?</p>
+        </div>
+        <button class="q-more" id="qMore" type="button">Gimme more questions.</button>
       </div>
-      <img class="hero-profile" src="images/6.webp" alt="Portrait of Miche O'higgins">
+      <div class="hero-reveal">
+        <img class="hero-profile" id="heroProfile" src="images/6.webp" alt="Portrait of Miche O'higgins">
+        <p class="q-intro" id="qIntro">Hi I’m Miche. I’m a writer that asks a lot of questions, for when you need copy that doesn’t just sound good but has real depth and value.</p>
+      </div>
+      <a class="explore-arrow" id="exploreArrow" href="#what" aria-label="explore what i do"><span class="arrow">↓</span></a>
     </div>
   </section>
 
@@ -235,6 +242,51 @@
   }catch(e){
     document.querySelectorAll('.fade').forEach(el=>el.classList.add('in'));
   }
+
+  // question batches
+  const qBatches = [
+    ["What's something you wish you could say?", "What’s something you haven’t found the right words for yet?"],
+    ["What do you say that no one else says?", "What do you believe that no one else believes?"],
+    ["What essence would I need to capture to write as you?"],
+    ["What systems are you critical of?"],
+    ["What moves you and what do you want to move in others?"],
+    ["What does freedom mean to you?", "What does it feel like in your body?"],
+    ["What is the curiosity that connects everything you do?"],
+    ["If the aims of your work were achieved, what would the world look like?"],
+    ["What bigger societal systems does this problem connect to?"],
+    ["What does vulnerability mean to you?"]
+  ];
+  const qBatchEl = document.getElementById('qBatch');
+  const qMoreBtn = document.getElementById('qMore');
+  let qCurrent = 0;
+  let qRemaining = [];
+
+  function qRender(batch){
+    qBatchEl.classList.add('swap');
+    setTimeout(()=>{
+      qBatchEl.innerHTML = batch.map(q => '<p class="q-line">' + q + '</p>').join('');
+      qBatchEl.classList.remove('swap');
+    }, 300);
+  }
+
+  function qNext(){
+    if (qRemaining.length === 0){
+      qRemaining = qBatches.map((_,i)=>i).filter(i=>i!==0);
+      for (let i = qRemaining.length-1; i > 0; i--){
+        const j = Math.floor(Math.random()*(i+1));
+        [qRemaining[i], qRemaining[j]] = [qRemaining[j], qRemaining[i]];
+      }
+    }
+    qCurrent = qRemaining.shift();
+    qRender(qBatches[qCurrent]);
+  }
+
+  qMoreBtn.addEventListener('click', qNext);
+
+  // delayed intro text + image: fly in from below, questions shift up
+  setTimeout(()=>{
+    document.querySelector('.hero-inner').classList.add('revealed');
+  }, 10000);
 </script>
 </body>
 </html>
