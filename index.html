@@ -41,7 +41,7 @@
           <p class="q-line">What's something you wish you could say?</p>
           <p class="q-line">What’s something you haven’t found the right words for yet?</p>
         </div>
-        <button class="q-more" id="qMore" type="button">Gimme more questions.</button>
+        <button class="q-more" id="qMore" type="button">Gimme more questions!</button>
       </div>
       <div class="hero-reveal">
         <img class="hero-profile" id="heroProfile" src="images/6.webp" alt="Portrait of Miche O'higgins">
@@ -81,8 +81,9 @@
     </div>
   </section>
 
-  <section class="wrap fade" id="how">
-    <h2 style="font-size:2rem;font-weight:500;margin:0 0 40px;">How I work</h2>
+  <section class="fade" id="how">
+    <div class="wrap">
+    <h2 style="font-size:2rem;font-weight:500;margin:0 0 24px;">How I work</h2>
     <div class="steps">
       <div class="step-box step-bg-1">
         <div class="num">01</div>
@@ -101,6 +102,7 @@
         <h3>Delivery</h3>
         <p>After a round or two of reviewing and making changes, that initial swarm of ideas has found a lovely coherent form, full of quirks and details that feel like you. Intentional and elegant.</p>
       </div>
+    </div>
     </div>
   </section>
 
@@ -121,7 +123,8 @@
 
   <div class="img-banner" role="img" aria-label="Decorative banner image"></div>
 
-  <section class="wrap fade" id="services">
+  <section class="fade" id="services">
+    <div class="wrap">
     <h2 style="font-size:2rem;font-weight:500;margin:0 0 40px;">My services</h2>
     <p style="max-width:56ch;">These are the main ways I work with clients — though most projects end up shaped around whatever they actually need.</p>
 
@@ -140,7 +143,7 @@
       <div><h3><a href="workshops.html">Workshops</a></h3><p class="sub"><em>Organisations, Schools, Festivals and Individuals</em></p></div>
       <div><p class="service-note">Experiential and playful writing workshops for all levels exploring specific themes and writing processes.</p><p class="service-note">I also offer 1-1 writing mentorship for personal or professional writing projects.</p><a class="service-learn-more" href="workshops.html">Learn more and see past examples of work. →</a><div class="service-examples"><h4>Examples of past work</h4><details class="accordion"><summary>Robin Schubert<span class="icon">+</span></summary><div class="a-body"></div></details></div></div>
     </div>
-
+    </div>
   </section>
 
   <section class="about fade" id="about">
@@ -297,7 +300,7 @@
   // delayed intro text + image: fly in from below, questions shift up
   setTimeout(()=>{
     document.querySelector('.hero-inner').classList.add('revealed');
-  }, 10000);
+  }, 5000);
 </script>
 </body>
 </html>
