@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Upcoming - Miche O'higgins</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Work+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css?v=37">
+</head>
+<body>
+<header class="nav" id="siteNav">
+  <div class="nav-inner">
+    <a class="nav-name" href="index.html#top">Miche O'higgins</a>
+    <nav class="links" id="navLinks">
+      <a href="index.html#top">Home</a>
+      <div class="dropdown" id="servicesDropdown">
+        <button class="dd-trigger" id="ddTrigger" aria-expanded="false" aria-haspopup="true">Services</button>
+        <div class="dd-menu" id="ddMenu">
+          <a href="brand-writing.html">Brand Writing</a>
+          <a href="creative-writing.html">Creative Writing</a>
+          <a href="workshops.html">Workshops</a>
+        </div>
+      </div>
+      <a href="about.html">About</a>
+      <a href="blog.html">Blog</a>
+      <a href="events.html" aria-current="page">Upcoming</a>
+    </nav>
+    <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">Menu</button>
+  </div>
+</header>
+
+<main>
+  <section class="wrap events-page">
+    <h1>Upcoming</h1>
+    <article class="event">
+      <div class="event-details">
+        <h2>Yoga for Writers</h2>
+        <p><time datetime="2026-12-09T05:00:00+01:00">Wednesday 9 December 2026, 5:00-6:30 am CET</time><br>Online &middot; Free</p>
+        <p>Find joy in writing through playful experiments and techniques to explore your own voice.</p>
+        <a class="event-signup" href="https://www.eventbrite.com/e/yoga-for-writers-tickets-2004763565792?aff=oddtdtcreator" target="_blank" rel="noopener noreferrer">Sign up</a>
+      </div>
+      <img class="event-image" src="https://www.eventbrite.co.uk/_next/image?url=https%3A%2F%2Fimg.evbuc.com%2Fhttps%253A%252F%252Fcdn.evbuc.com%252Fimages%252F1198330745%252F193201029161%252F1%252Foriginal.20261119-163903%3Fcrop%3Dfocalpoint%26fit%3Dcrop%26w%3D1880%26auto%3Dformat%252Ccompress%26q%3D75%26sharp%3D10%26fp-x%3D0.5%26fp-y%3D0.5%26s%3D696bcd3315fa40ee38339a1ce4c2cadb&amp;w=1880&amp;q=75" alt="Yoga for Writers event artwork">
+    </article>
+  </section>
+</main>
+
+<footer>
+  <div class="footer-inner">
+    <div class="footer-newsletter">
+      <p><strong>Want to stay in touch? Subscribe to my newsletter! </strong><br>Once a month, I share my favourite writing tips, reflections about writing (mostly) or announce any upcoming workshops.</p>
+      <form action="https://micheohiggins.us1.list-manage.com/subscribe/post?u=e549fdbb5acc9a97b92ba447f&amp;id=dabc19608a&amp;f_id=00b3cee1f0" method="post" target="_blank" rel="noopener">
+        <label for="newsletter-email">Email address</label>
+        <div class="newsletter-fields"><input id="newsletter-email" type="email" name="EMAIL" autocomplete="email" required><button type="submit" name="subscribe">Subscribe</button></div>
+        <div class="newsletter-trap" aria-hidden="true"><input type="text" name="b_e549fdbb5acc9a97b92ba447f_dabc19608a" tabindex="-1" value="" autocomplete="off"></div>
+      </form>
+    </div>
+    <div class="footer-contact"><a href="mailto:michelle_oht@hotmail.com">michelle_oht@hotmail.com</a><a href="tel:+491622529030">+49 162 252 9030</a></div>
+  </div>
+</footer>
+
+<script>
+const nav=document.getElementById('siteNav');window.addEventListener('scroll',()=>nav.classList.toggle('scrolled',window.scrollY>8),{passive:true});
+const menuBtn=document.getElementById('menuBtn'),navLinks=document.getElementById('navLinks');menuBtn.addEventListener('click',()=>navLinks.classList.toggle('open'));navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{navLinks.classList.remove('open');document.getElementById('servicesDropdown').classList.remove('open')}));
+const dropdown=document.getElementById('servicesDropdown'),ddTrigger=document.getElementById('ddTrigger');ddTrigger.addEventListener('click',e=>{e.stopPropagation();const isOpen=dropdown.classList.toggle('open');ddTrigger.setAttribute('aria-expanded',isOpen)});document.addEventListener('click',e=>{if(!dropdown.contains(e.target)){dropdown.classList.remove('open');ddTrigger.setAttribute('aria-expanded','false')}});
+</script>
+</body>
+</html>
